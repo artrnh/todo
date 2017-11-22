@@ -22,7 +22,7 @@
   border: 2px solid rgb(49, 65, 80);
 }
 
-.checkTd button img {
+.checkTd button svg {
   display: none;
 }
 
