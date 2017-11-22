@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import TodoItem from '../components/TodoItem';
-import ItemsTableFilters from '../components/ItemsTableFilters';
-import './ItemsTable.css';
+import Task from '../../components/Task/Task';
+import TaskFilters from '../../components/TaskFilters/TaskFilters';
+import './TasksTable.css';
 
-export default class ItemsTable extends Component {
+export default class TasksTable extends Component {
   constructor(props) {
     super(props);
 
@@ -46,16 +46,16 @@ export default class ItemsTable extends Component {
         <table>
           <tbody>
             {items.map((item, index) => {
-              return <TodoItem
-              key={index}
-              item={item}
-              onDone={this.props.handleItemDone}
-              onDelete={this.props.handleItemDelete}
-            />;
+              return <Task
+                key={index}
+                item={item}
+                onDone={this.props.handleItemDone}
+                onDelete={this.props.handleItemDelete}
+              />;
             })}
           </tbody>
         </table>
-        <ItemsTableFilters
+        <TaskFilters
           items={this.props.items}
           activeView={this.state.activeView}
           onAll={this.handleAllFilter}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ItemsTable from '../containers/ItemsTable';
-import AddItem from '../components/AddItem';
+import TasksTable from '../TasksTable/TasksTable';
+import AddItem from '../../components/AddItem/AddItem';
 import './TodoApp.css';
 
 export default class TodoApp extends Component {
@@ -72,7 +72,7 @@ export default class TodoApp extends Component {
             onAddTextChange={this.handleAddInput} 
             onAddSubmit={this.handleSubmit} 
           />
-          <ItemsTable
+          <TasksTable
             items={this.state.items}
             handleItemDone={this.handleItemDone}
             handleClearCompleted={this.handleClearCompleted}

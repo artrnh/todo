@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './TodoItem.css';
+import './Task.css';
 
-export default class TodoItem extends Component {
+export default class Task extends Component {
   constructor(props) {
     super(props);
 

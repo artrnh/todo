@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './ItemsTableFilters.css';
+import './TaskFilters.css';
 
-export default class ItemsTableFilters extends Component {
+export default class TaskFilters extends Component {
   constructor(props) {
     super(props);
 
