@@ -1,3 +1,11 @@
 .TodoApp {
+  margin: 0 auto;
   text-align: center;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 500px;
 }

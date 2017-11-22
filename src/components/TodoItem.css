@@ -1,0 +1,56 @@
+.row {
+  position: relative;
+  height: 43px;
+}
+
+.checkTd {
+  width: 48px;
+}
+
+.checkTd button {
+  padding: 0;
+  outline: 0;
+  border: 2px solid #1A202C;
+  width: 34px;
+  height: 34px;
+  margin-top: 3px;
+  background-color: transparent;
+}
+
+.checkTd button:hover {
+  cursor: pointer;
+  border: 2px solid rgb(49, 65, 80);
+}
+
+.checkTd button img {
+  visibility: hidden;
+}
+
+.task {
+  font-size: 24px;
+  text-align: left;
+}
+
+.deleteTd {
+  width: 48px;
+}
+
+.deleteTd button {
+  visibility: hidden;
+  padding: 0;
+  outline: 0;
+  border: none;
+  width: 34px;
+  height: 34px;
+  margin-top: 3px;
+  background-color: transparent;
+}
+
+.deleteTd button:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+.row:hover .deleteTd button {
+  visibility: visible;
+}

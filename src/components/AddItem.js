@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './AddItem.css';
 
 export default class AddItem extends Component {
   constructor(props) {
@@ -19,13 +20,15 @@ export default class AddItem extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input 
-          type="text" 
+        <input
+          className="addInput"
+          type="text"
           placeholder="Put your new task here"
           value={this.props.addText}
           onChange={this.handleAddTextChange}
         />
-        <button onClick={this.handleSubmit}>Add Item</button>
+        <br />
+        <button className="addBtn" onClick={this.handleSubmit}>Add Item</button>
       </form>
     );
   }

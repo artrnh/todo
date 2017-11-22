@@ -1,0 +1,35 @@
+.addInput {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: #DEDAA9;
+  border: 3px solid #1A202C;
+  font-size: 14px;
+}
+
+.addInput:focus {
+  border: 3px solid rgb(49, 65, 80);
+}
+
+.addBtn {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: #DEDAA9;
+  margin-bottom: 10px;
+}
+
+.addBtn:hover {
+  cursor: pointer;
+  background-color: rgb(197, 193, 150);
+}
+
+.addBtn:active {
+  opacity: .8;
+}

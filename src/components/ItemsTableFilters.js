@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './ItemsTableFilters.css';
 
 export default class ItemsTableFilters extends Component {
   constructor(props) {
@@ -27,12 +28,15 @@ export default class ItemsTableFilters extends Component {
   }
 
   render() {
+    if (!this.props.items.length) return <div></div>;
     return (
-      <div>
-        <span>{this.props.itemsCount} items left</span>
-        <button onClick={this.handleAllFilter}>All</button>
-        <button onClick={this.handleActiveFilter}>Active</button>
-        <button onClick={this.handleCompletedFilter}>Completed</button>
+      <div className='filters'>
+        <span className='itemsLeft'>{this.props.itemsCount} items left</span>
+        <div>
+          <button onClick={this.handleAllFilter}>All</button>
+          <button onClick={this.handleActiveFilter}>Active</button>
+          <button onClick={this.handleCompletedFilter}>Completed</button>
+        </div>
         <button onClick={this.handleClearCompleted}>Clear completed</button>
       </div>
     );

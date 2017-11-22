@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TodoItem from '../components/TodoItem';
 import ItemsTableFilters from '../components/ItemsTableFilters';
+import './ItemsTable.css';
 
 export default class ItemsTable extends Component {
   constructor(props) {
@@ -56,6 +57,7 @@ export default class ItemsTable extends Component {
           </tbody>
         </table>
         <ItemsTableFilters
+          items={this.props.items}
           itemsCount={itemsCount}
           onAll={this.handleAllFilter}
           onActive={this.handleActiveFilter}

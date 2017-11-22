@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './TodoItem.css';
 
 export default class TodoItem extends Component {
   constructor(props) {
@@ -19,11 +20,22 @@ export default class TodoItem extends Component {
   }
 
   render() {
+    const doneBtnStyles = this.props.item.done  ? { borderColor: '#74AF96' } : {};
+    const doneImgStyles = this.props.item.done  ? { visibility: 'visible' } : {};
+    const doneTaskStyles = this.props.item.done ? { textDecoration: 'line-through', color: '#747E80' } : {};
     return (
-      <tr>
-        <th><button onClick={this.handleDoneClick}>check</button></th>
-        <td>{this.props.item.text}</td>
-        <th><button onClick={this.handleDeleteClick}>X</button></th>
+      <tr className="row">
+        <td className="checkTd">
+          <button style={doneBtnStyles} onClick={this.handleDoneClick}>
+            <img style={doneImgStyles} src='https:icon.now.sh/check/32/74AF96' alt='check icon' />
+          </button>
+        </td>
+        <td style={doneTaskStyles} className="task">{this.props.item.text}</td>
+        <td className="deleteTd">
+          <button onClick={this.handleDeleteClick}>
+            <img src='https:icon.now.sh/close/32/CF4037' alt='close icon' />
+          </button>
+        </td>
       </tr>
     );
   }

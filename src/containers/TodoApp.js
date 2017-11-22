@@ -7,7 +7,7 @@ export default class TodoApp extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { items: [], addText: '', filterText: '', activeFilter: null };
+    this.state = { items: [], addText: '', filterText: '' };
     this.handleAddInput = this.handleAddInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleItemDone = this.handleItemDone.bind(this);
@@ -38,7 +38,11 @@ export default class TodoApp extends Component {
   handleItemDone(e) {
     const newItems = this.state.items;
     newItems.forEach(item => {
-      if (item.id === e.id) item.done = true;
+      if (item.id === e.id && item.done === false) { 
+        item.done = true;
+      } else if (item.id === e.id && item.done === true) {
+        item.done = false;
+      }
     });
 
     this.setState({ items: newItems });
@@ -60,19 +64,21 @@ export default class TodoApp extends Component {
 
   render() {
     return (
-      <div>
-        <h1>React To-Do App</h1>
-        <AddItem
-          addText={this.state.addText} 
-          onAddTextChange={this.handleAddInput} 
-          onAddSubmit={this.handleSubmit} 
-        />
-        <ItemsTable 
-          items={this.state.items}
-          handleItemDone={this.handleItemDone}
-          handleClearCompleted={this.handleClearCompleted}
-          handleItemDelete={this.handleItemDelete}
-        />
+      <div className='TodoApp'>
+        <div className='container'>
+          <h1>React To-Do App</h1>
+          <AddItem
+            addText={this.state.addText} 
+            onAddTextChange={this.handleAddInput} 
+            onAddSubmit={this.handleSubmit} 
+          />
+          <ItemsTable
+            items={this.state.items}
+            handleItemDone={this.handleItemDone}
+            handleClearCompleted={this.handleClearCompleted}
+            handleItemDelete={this.handleItemDelete}
+          />
+        </div>
       </div>
     );
   }
