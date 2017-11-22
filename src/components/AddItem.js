@@ -23,7 +23,7 @@ export default class AddItem extends Component {
         <input
           className="addInput"
           type="text"
-          placeholder="Put your new task here"
+          placeholder="What needs to be done?"
           value={this.props.addText}
           onChange={this.handleAddTextChange}
         />

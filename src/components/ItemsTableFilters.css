@@ -10,3 +10,36 @@
 .itemsLeft {
   font-weight: 700;
 }
+
+.activeView {
+  margin-left: 10px;
+}
+
+.activeView button {
+  outline: 0;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.activeView button:not(:last-child) {
+  margin-right: 5px;
+}
+
+.activeView button:hover {
+  cursor: pointer;
+}
+
+.clearCompleted {
+  display: inline;
+  visibility: hidden;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.clearCompleted:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

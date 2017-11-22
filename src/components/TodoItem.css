@@ -23,7 +23,7 @@
 }
 
 .checkTd button img {
-  visibility: hidden;
+  display: none;
 }
 
 .task {

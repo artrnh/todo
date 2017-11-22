@@ -28,16 +28,25 @@ export default class ItemsTableFilters extends Component {
   }
 
   render() {
+    const activeItems = this.props.items.filter(item => item.done === false).length;
+    const clearCompletedStyles = this.props.items.filter(item => item.done === true).length !== 0 ? { visibility: 'visible' } : {};
+
+    const filterBtnBorder = { borderWidth: '2px', borderStyle: 'solid', borderColor: '#1A202C' };
+    const allStyles = this.props.activeView === 'all' ? filterBtnBorder : {};
+    const activeStyles = this.props.activeView === 'active' ? filterBtnBorder : {};
+    const completedStyles = this.props.activeView === 'completed' ? filterBtnBorder : {};
+
     if (!this.props.items.length) return <div></div>;
+
     return (
       <div className='filters'>
-        <span className='itemsLeft'>{this.props.itemsCount} items left</span>
-        <div>
-          <button onClick={this.handleAllFilter}>All</button>
-          <button onClick={this.handleActiveFilter}>Active</button>
-          <button onClick={this.handleCompletedFilter}>Completed</button>
+        <span className='itemsLeft'>{activeItems} items left</span>
+        <div className='activeView'>
+          <button style={allStyles} onClick={this.handleAllFilter}>All</button>
+          <button style={activeStyles} onClick={this.handleActiveFilter}>Active</button>
+          <button style={completedStyles} onClick={this.handleCompletedFilter}>Completed</button>
         </div>
-        <button onClick={this.handleClearCompleted}>Clear completed</button>
+        <button style={clearCompletedStyles} className='clearCompleted' onClick={this.handleClearCompleted}>Clear completed</button>
       </div>
     );
   }

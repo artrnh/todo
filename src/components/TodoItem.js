@@ -21,7 +21,7 @@ export default class TodoItem extends Component {
 
   render() {
     const doneBtnStyles = this.props.item.done  ? { borderColor: '#74AF96' } : {};
-    const doneImgStyles = this.props.item.done  ? { visibility: 'visible' } : {};
+    const doneImgStyles = this.props.item.done  ? { display: 'block' } : {};
     const doneTaskStyles = this.props.item.done ? { textDecoration: 'line-through', color: '#747E80' } : {};
     return (
       <tr className="row">

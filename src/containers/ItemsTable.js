@@ -27,7 +27,6 @@ export default class ItemsTable extends Component {
 
   render() {
     let items = this.props.items;
-    let itemsCount = items.filter(item => item.done === false).length;
     switch (this.state.activeView) {
       case 'all':
       default:
@@ -58,7 +57,7 @@ export default class ItemsTable extends Component {
         </table>
         <ItemsTableFilters
           items={this.props.items}
-          itemsCount={itemsCount}
+          activeView={this.state.activeView}
           onAll={this.handleAllFilter}
           onActive={this.handleActiveFilter}
           onCompleted={this.handleCompletedFilter}
