@@ -48,7 +48,7 @@ export default class TodoApp extends Component {
   }
 
   handleItemDone(id) {
-    const items = this.state.items;
+    const items = [...this.state.items];
     items.forEach(item => {
       if (item.id === id && !item.done) { 
         item.done = true;
@@ -61,12 +61,12 @@ export default class TodoApp extends Component {
   }
 
   handleClearCompleted() {
-    const items = this.state.items.filter(item => item.done === false);
+    const items = [...this.state.items].filter(item => !item.done);
     this.setState({ items });
   }
 
   handleItemDelete(id) {
-    const items = this.state.items;
+    const items = [...this.state.items];
     items.forEach((item, index, arr) => {
       if (item.id === id) arr.splice(index, 1);
     });
