@@ -29,12 +29,12 @@ export default class TaskFilters extends Component {
 
   render() {
     const activeItems = this.props.items.filter(item => item.done === false).length;
-    const clearCompletedStyles = this.props.items.filter(item => item.done === true).length !== 0 ? { visibility: 'visible' } : {};
+    const clearCompletedStyles = this.props.items.filter(item => item.done === true).length !== 0 ? { visibility: 'visible' } : null;
 
     const filterBtnBorder = { borderWidth: '2px', borderStyle: 'solid', borderColor: '#1A202C' };
-    const allStyles = this.props.activeView === 'all' ? filterBtnBorder : {};
-    const activeStyles = this.props.activeView === 'active' ? filterBtnBorder : {};
-    const completedStyles = this.props.activeView === 'completed' ? filterBtnBorder : {};
+    const allStyles = this.props.activeView === 'all' ? filterBtnBorder : null;
+    const activeStyles = this.props.activeView === 'active' ? filterBtnBorder : null;
+    const completedStyles = this.props.activeView === 'completed' ? filterBtnBorder : null;
 
     if (!this.props.items.length) return <div></div>;
 

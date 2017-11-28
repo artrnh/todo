@@ -15,6 +15,18 @@ export default class TodoApp extends Component {
     this.handleItemDelete = this.handleItemDelete.bind(this);
   }
 
+  componentDidMount() {
+    if (localStorage.getItem('items')) {
+      const items = JSON.parse(localStorage.getItem('items'));
+
+      this.setState({ items });
+    };
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem('items', JSON.stringify(this.state.items));
+  }
+
   handleAddInput(e) {
     this.setState({ addText: e.target.value });
   }
@@ -35,31 +47,31 @@ export default class TodoApp extends Component {
     }));
   }
 
-  handleItemDone(e) {
-    const newItems = this.state.items;
-    newItems.forEach(item => {
-      if (item.id === e.id && item.done === false) { 
+  handleItemDone(id) {
+    const items = this.state.items;
+    items.forEach(item => {
+      if (item.id === id && !item.done) { 
         item.done = true;
-      } else if (item.id === e.id && item.done === true) {
+      } else if (item.id === id && item.done) {
         item.done = false;
       }
     });
 
-    this.setState({ items: newItems });
+    this.setState({ items });
   }
 
   handleClearCompleted() {
-    const newItems = this.state.items.filter(item => item.done === false);
-    this.setState({ items: newItems });
+    const items = this.state.items.filter(item => item.done === false);
+    this.setState({ items });
   }
 
-  handleItemDelete(e) {
-    const newItems = this.state.items;
-    newItems.forEach((item, index, arr) => {
-      if (item.id === e.id) arr.splice(index, 1);
+  handleItemDelete(id) {
+    const items = this.state.items;
+    items.forEach((item, index, arr) => {
+      if (item.id === id) arr.splice(index, 1);
     });
 
-    this.setState({ items: newItems });
+    this.setState({ items });
   }
 
   render() {

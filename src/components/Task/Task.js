@@ -10,19 +10,17 @@ export default class Task extends Component {
   }
 
   handleDoneClick(e) {
-    e.id = this.props.item.id;
-    this.props.onDone(e);
+    this.props.onDone(this.props.item.id);
   }
 
   handleDeleteClick(e) {
-    e.id = this.props.item.id;
-    this.props.onDelete(e);
+    this.props.onDelete(this.props.item.id);
   }
 
   render() {
-    const doneBtnStyles = this.props.item.done ? { borderColor: '#74AF96' } : {};
-    const doneImgStyles = this.props.item.done ? { display: 'block' } : {};
-    const doneTaskStyles = this.props.item.done ? { textDecoration: 'line-through', color: '#747E80' } : {};
+    const doneBtnStyles = this.props.item.done ? { borderColor: '#74AF96' } : null;
+    const doneImgStyles = this.props.item.done ? { display: 'block' } : null;
+    const doneTaskStyles = this.props.item.done ? { textDecoration: 'line-through', color: '#747E80' } : null;
     return (
       <tr className="row">
         <td className="checkTd">
