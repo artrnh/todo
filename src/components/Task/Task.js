@@ -10,13 +10,17 @@ const task = (props) => {
     <tr className="row">
       <td className="checkTd">
         <button style={doneBtnStyles} onClick={() => { props.onDone(props.item.id) }}>
-          <img style={doneImgStyles} src='https://icon.now.sh/check/32/74AF96' alt='check icon' />
+          <svg style={doneImgStyles} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#74AF96">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+          </svg>
         </button>
       </td>
       <td style={doneTaskStyles} className="task">{props.item.text}</td>
       <td className="deleteTd">
         <button onClick={() => { props.onDelete(props.item.id) }}>
-          <img src='https://icon.now.sh/close/32/CF4037' alt='close icon' />
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#CF4037">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+          </svg>
         </button>
       </td>
     </tr>
