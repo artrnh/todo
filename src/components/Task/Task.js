@@ -10,13 +10,13 @@ const task = (props) => {
     <tr className="row">
       <td className="checkTd">
         <button style={doneBtnStyles} onClick={() => { props.onDone(props.item.id) }}>
-          <img style={doneImgStyles} src='https:icon.now.sh/check/32/74AF96' alt='check icon' />
+          <img style={doneImgStyles} src='https//icon.now.sh/check/32/74AF96' alt='check icon' />
         </button>
       </td>
       <td style={doneTaskStyles} className="task">{props.item.text}</td>
       <td className="deleteTd">
         <button onClick={() => { props.onDelete(props.item.id) }}>
-          <img src='https:icon.now.sh/close/32/CF4037' alt='close icon' />
+          <img src='https//icon.now.sh/close/32/CF4037' alt='close icon' />
         </button>
       </td>
     </tr>
