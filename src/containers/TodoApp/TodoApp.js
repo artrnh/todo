@@ -3,16 +3,11 @@ import TasksTable from '../TasksTable/TasksTable';
 import AddItem from '../../components/AddItem/AddItem';
 import './TodoApp.css';
 
-export default class TodoApp extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { items: [], addText: '', filterText: '' };
-    this.handleAddInput = this.handleAddInput.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleItemDone = this.handleItemDone.bind(this);
-    this.handleClearCompleted = this.handleClearCompleted.bind(this);
-    this.handleItemDelete = this.handleItemDelete.bind(this);
+class TodoApp extends Component {
+  state = {
+    items: [],
+    addText: '',
+    filterText: ''
   }
 
   componentDidMount() {
@@ -20,18 +15,18 @@ export default class TodoApp extends Component {
       const items = JSON.parse(localStorage.getItem('items'));
 
       this.setState({ items });
-    };
+    }
   }
 
   componentDidUpdate() {
     localStorage.setItem('items', JSON.stringify(this.state.items));
   }
 
-  handleAddInput(e) {
-    this.setState({ addText: e.target.value });
+  handleAddInput = (text) => {
+    this.setState({ addText: text });
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     if (!this.state.addText.length) return;
 
@@ -47,10 +42,10 @@ export default class TodoApp extends Component {
     }));
   }
 
-  handleItemDone(id) {
+  handleItemDone = (id) => {
     const items = [...this.state.items];
     items.forEach(item => {
-      if (item.id === id && !item.done) { 
+      if (item.id === id && !item.done) {
         item.done = true;
       } else if (item.id === id && item.done) {
         item.done = false;
@@ -60,12 +55,12 @@ export default class TodoApp extends Component {
     this.setState({ items });
   }
 
-  handleClearCompleted() {
+  handleClearCompleted = () => {
     const items = [...this.state.items].filter(item => !item.done);
     this.setState({ items });
   }
 
-  handleItemDelete(id) {
+  handleItemDelete = (id) => {
     const items = [...this.state.items];
     items.forEach((item, index, arr) => {
       if (item.id === id) arr.splice(index, 1);
@@ -80,9 +75,9 @@ export default class TodoApp extends Component {
         <div className='container'>
           <h1>React To-Do App</h1>
           <AddItem
-            addText={this.state.addText} 
-            onAddTextChange={this.handleAddInput} 
-            onAddSubmit={this.handleSubmit} 
+            addText={this.state.addText}
+            onAddTextChange={this.handleAddInput}
+            onAddSubmit={this.handleSubmit}
           />
           <TasksTable
             items={this.state.items}
@@ -95,3 +90,5 @@ export default class TodoApp extends Component {
     );
   }
 }
+
+export default TodoApp;

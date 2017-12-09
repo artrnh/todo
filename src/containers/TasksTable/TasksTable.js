@@ -3,25 +3,20 @@ import Task from '../../components/Task/Task';
 import TaskFilters from '../../components/TaskFilters/TaskFilters';
 import './TasksTable.css';
 
-export default class TasksTable extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { activeView: 'all' };
-    this.handleAllFilter = this.handleAllFilter.bind(this);
-    this.handleActiveFilter = this.handleActiveFilter.bind(this);
-    this.handleCompletedFilter = this.handleCompletedFilter.bind(this);
+class TasksTable extends Component {
+  state = {
+    activeView: 'all'
   }
 
-  handleAllFilter() {
+  handleAllFilter = () => {
     this.setState({ activeView: 'all' });
   }
 
-  handleActiveFilter() {
+  handleActiveFilter = () => {
     this.setState({ activeView: 'active' });
   }
 
-  handleCompletedFilter() {
+  handleCompletedFilter = () => {
     this.setState({ activeView: 'completed' });
   }
 
@@ -47,7 +42,7 @@ export default class TasksTable extends Component {
           <tbody>
             {items.map((item, index) => {
               return <Task
-                key={index}
+                key={item.id}
                 item={item}
                 onDone={this.props.handleItemDone}
                 onDelete={this.props.handleItemDelete}
@@ -67,3 +62,5 @@ export default class TasksTable extends Component {
     );
   }
 }
+
+export default TasksTable;

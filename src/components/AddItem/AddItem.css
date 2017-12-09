@@ -1,5 +1,5 @@
 .addInput {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   width: 100%;
   border: none;
   outline: none;
@@ -14,7 +14,7 @@
 }
 
 .addBtn {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   font-weight: 700;
   width: 100%;
@@ -23,6 +23,7 @@
   padding: 10px;
   background-color: #DEDAA9;
   margin-bottom: 10px;
+  transition: all .2s ease-in-out;
 }
 
 .addBtn:hover {

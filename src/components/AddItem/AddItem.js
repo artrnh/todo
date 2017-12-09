@@ -1,35 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './AddItem.css';
 
-export default class AddItem extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleAddTextChange = this.handleAddTextChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleAddTextChange(e) {
-    this.props.onAddTextChange(e);
-  }
-
-  handleSubmit(e) {
-    this.props.onAddSubmit(e);
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          className="addInput"
-          type="text"
-          placeholder="What needs to be done?"
-          value={this.props.addText}
-          onChange={this.handleAddTextChange}
-        />
-        <br />
-        <button className="addBtn" onClick={this.handleSubmit}>Add Item</button>
-      </form>
-    );
-  }
+const AddItem = (props) => {
+  return (
+    <form onSubmit={(e) => { props.onAddSubmit(e) }}>
+      <input
+        className="addInput"
+        type="text"
+        placeholder="What needs to be done?"
+        value={props.addText}
+        onChange={(e) => { props.onAddTextChange(e.target.value) }}
+      />
+      <br />
+      <button className="addBtn" type="submit">Add Item</button>
+    </form>
+  );
 }
+
+export default AddItem;

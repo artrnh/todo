@@ -15,6 +15,7 @@
   height: 34px;
   margin-top: 3px;
   background-color: transparent;
+  transition: all .2s ease-out;
 }
 
 .checkTd button:hover {
@@ -22,13 +23,15 @@
   border: 2px solid rgb(49, 65, 80);
 }
 
-.checkTd button svg {
-  display: none;
+.checkTd button img {
+  visibility: hidden;
+  height: 100%;
 }
 
 .task {
   font-size: 24px;
   text-align: left;
+  transition: all .2s ease-out;
 }
 
 .deleteTd {
@@ -42,8 +45,12 @@
   border: none;
   width: 34px;
   height: 34px;
-  margin-top: 3px;
+  margin-top: 5px;
   background-color: transparent;
+}
+
+.deleteTd button img {
+  height: 100%;
 }
 
 .deleteTd button:hover {

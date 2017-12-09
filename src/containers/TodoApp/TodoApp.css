@@ -9,3 +9,9 @@
 .container {
   width: 500px;
 }
+
+@media (max-width: 499px) {
+  .TodoApp {
+    margin-top: 0;
+  }
+}
