@@ -73,7 +73,7 @@ class TodoApp extends Component {
     return (
       <div className='TodoApp'>
         <div className='container'>
-          <h1>React To-Do App</h1>
+          <h1>React To Do App</h1>
           <AddItem
             addText={this.state.addText}
             onAddTextChange={this.handleAddInput}

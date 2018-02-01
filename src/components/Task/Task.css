@@ -10,17 +10,17 @@
 .checkTd button {
   padding: 0;
   outline: 0;
-  border: 2px solid #1A202C;
+  border: 2px solid #000;
   width: 34px;
   height: 34px;
   margin-top: 3px;
   background-color: transparent;
   transition: all .2s ease-out;
+  cursor: pointer;
 }
 
 .checkTd button:hover {
-  cursor: pointer;
-  border: 2px solid rgb(49, 65, 80);
+  border: 2px solid rgb(70, 70, 70);
 }
 
 .checkTd button svg {
@@ -39,7 +39,6 @@
 }
 
 .deleteTd button {
-  visibility: hidden;
   padding: 0;
   outline: 0;
   border: none;
@@ -47,6 +46,8 @@
   height: 34px;
   margin-top: 5px;
   background-color: transparent;
+  cursor: pointer;
+  transition: transform .15s ease-out;
 }
 
 .deleteTd button svg {
@@ -54,10 +55,11 @@
 }
 
 .deleteTd button:hover {
-  cursor: pointer;
-  opacity: .8;
+  transform: scale(1.2);
 }
 
-.row:hover .deleteTd button {
-  visibility: visible;
+@media (max-width: 499px) {
+  .task {
+    font-size: 20px;
+  }
 }

@@ -1,6 +1,6 @@
 .filters {
   height: 43px;
-  background-color: #DEDAA9;
+  background-color: #DFD297;
   margin-top: 10px;
   display: flex;
   align-items: center;
@@ -11,36 +11,54 @@
   font-weight: 700;
 }
 
-.activeView {
-  margin-left: 10px;
-}
-
 .activeView button {
+  font: inherit;
+  font-size: 13px;
   outline: 0;
   border: 2px solid transparent;
-  border-radius: 10px;
+  border-radius: 15px;
   background-color: transparent;
   transition: all .2s ease-out;
+  cursor: pointer;
+}
+
+.activeView button:hover {
+  border: 2px solid #000;
 }
 
 .activeView button:not(:last-child) {
   margin-right: 5px;
 }
 
-.activeView button:hover {
-  cursor: pointer;
-}
-
 .clearCompleted {
+  font: inherit;
+  font-size: 13px;
   display: inline;
   visibility: hidden;
   padding: 0;
   background-color: transparent;
   border: none;
   outline: none;
+  cursor: pointer;
+  transition: all .2s ease-out;
 }
 
 .clearCompleted:hover {
-  cursor: pointer;
-  text-decoration: underline;
+  color: #C33149;
+  border-bottom: 1px solid #C33149;
+}
+
+@media (max-width: 499px) {
+  .filters {
+    justify-content: space-between;
+  }
+
+  .itemsLeft {
+    width: 50px;
+    font-size: 12px;
+  }
+
+  .clearCompleted {
+    width: 70px;
+  }
 }

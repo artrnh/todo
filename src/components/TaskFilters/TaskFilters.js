@@ -14,7 +14,7 @@ const taskFilters = (props) => {
 
   return (
     <div className='filters'>
-      <span className='itemsLeft'>{activeItems} items left</span>
+      <span className='itemsLeft'>{activeItems} tasks left</span>
       <div className='activeView'>
         <button style={allStyles} onClick={props.onAll}>All</button>
         <button style={activeStyles} onClick={props.onActive}>Active</button>

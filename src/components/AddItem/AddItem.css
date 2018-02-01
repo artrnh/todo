@@ -4,13 +4,13 @@
   border: none;
   outline: none;
   padding: 10px;
-  background-color: #DEDAA9;
-  border: 3px solid #1A202C;
+  background-color: #DFD297;
+  border: 3px solid #000;
   font-size: 14px;
 }
 
 .addInput:focus {
-  border: 3px solid rgb(49, 65, 80);
+  border: 3px solid rgb(70, 70, 70);
 }
 
 .addBtn {
@@ -21,14 +21,14 @@
   border: none;
   outline: none;
   padding: 10px;
-  background-color: #DEDAA9;
+  background-color: #DFD297;
   margin-bottom: 10px;
   transition: all .2s ease-in-out;
 }
 
 .addBtn:hover {
   cursor: pointer;
-  background-color: rgb(197, 193, 150);
+  background-color: rgb(209, 195, 131);
 }
 
 .addBtn:active {
